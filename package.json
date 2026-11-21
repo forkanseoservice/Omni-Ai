@@ -1,0 +1,64 @@
+{
+  "name": "omni-ai",
+  "version": "2.8.0",
+  "description": "Omni Ai \u2014 Open BYOK Multi-Provider AI Workspace (No Limits, Bring Your Own API Keys, EXE & Android APK)",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "node server.js",
+    "desktop": "electron .",
+    "build:exe": "electron-builder --win nsis portable --publish never",
+    "android:init": "npx cap add android && npx cap sync android",
+    "android:sync": "npx cap sync android"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "build": {
+    "appId": "com.forkan.omniai",
+    "productName": "Omni Ai",
+    "directories": {
+      "output": "dist-win"
+    },
+    "files": [
+      "server.js",
+      "providers.js",
+      "electron/**/*",
+      "public/**/*",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/browser": "^6.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2",
+    "electron": "^31.7.0",
+    "electron-builder": "^25.1.8"
+  }
+}

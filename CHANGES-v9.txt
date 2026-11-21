@@ -1,0 +1,26 @@
+Omni Ai v9 (2.6.0): কী ঠিক করা হয়েছে
+- .exe: প্রতিবার র‍্যান্ডম পোর্টের কারণে চ্যাট ও API key হারিয়ে যেত; এখন নির্দিষ্ট পোর্ট (38517) + একটাই উইন্ডো।
+- Service worker: পুরনো ফাইল আটকে থাকত (cache-first); এখন network-first, নতুন ভার্সন সাথে সাথে আসে।
+- নিরাপত্তা: same-host origin এখন শুধু IP ঠিকানায় (DNS-rebinding ঠেকাতে)।
+- Free-limit auto-switch ফিরিয়ে আনা হয়েছে (Settings-এ টগল, ডিফল্ট চালু): শুধু ফ্রি মডেল, রিপ্লাই শুরুর আগে, সর্বোচ্চ ৪ বার, 401/403/400/policy এরর হলে সুইচ নয়।
+- Connectors: অফিসিয়াল সাইট খুললেই "Connected" দেখাত; এখন "Opened (login not verified)"।
+- New Folder: prompt() Electron-এ কাজ করে না; ইনলাইন ইনপুট।
+- Ollama/LM Studio এখন চ্যাটবক্সের provider লিস্টে।
+- ৩ বার ডুপ্লিকেট base64 ছবি বাদ, ফাইল ১২% হালকা।
+- মোবাইল কম্পোজার: সেন্ড বাটন নিচে ভেঙে যেত, ঠিক করা হয়েছে।
+যাচাই হয়নি: আসল Windows .exe বিল্ড, APK বিল্ড (GitHub Actions চালাতে হবে), আসল provider key দিয়ে চ্যাট।
+
+v2.7.0 যোগ হয়েছে
+- Skills: Claude-এর মতো SKILL.md / .md / .txt / .zip / .skill আপলোড (ড্র্যাগ-ড্রপও চলে)। একসাথে একাধিক স্কিল অ্যাক্টিভ থাকে। শুধু টেক্সট নির্দেশনা ব্যবহার হয়, প্যাকেজের ভেতরের স্ক্রিপ্ট চলে না। সর্বোচ্চ ৩০,০০০ অক্ষর।
+- Create Skill / New Prompt: window.prompt() বাদ, নিজস্ব ডায়ালগ (Electron-এ prompt() চলে না)।
+- স্পিড: Google Font আর পেজ আটকায় না, নতুন বার্তা অফস্ক্রিনে আলাদা রেন্ডার, মোবাইলে ভারী blur বন্ধ, reduced-motion সাপোর্ট।
+- ডিজাইন: hover/press অ্যানিমেশন, ফোকাস রিং, স্ক্রলবার স্টাইল।
+
+v2.8.0
+- Connect dialog: "Test connection" (mode, endpoint host, model count, 1-token chat test, HTTP status + Bengali hint).
+- Auto-switch: provider-wide quota/limit errors put the whole provider on a 10-minute cooldown and jump to another connected provider; clearer error hints.
+- Local providers (Ollama/LM Studio): editable server address (use PC LAN IP from the APK), Test connection.
+- Back navigation: phone back key closes dialogs/drawers, then steps back through views, then "press back again to exit"; visible "Back" button on every tool page.
+- Content Studio: provider+model picker, custom prompt + saved "My prompts", keywords/audience/brand/length, structure toggles, meta title/description/slug with counters, optional JSON-LD schema, WordPress excerpt+slug on publish; local draft when no site; history saving.
+- Image Studio: "Free Stock Photos" tab (Openverse no key; Pexels/Pixabay/Unsplash with free key), credits kept, save to gallery.
+- Not yet verified live: stock-photo APIs, Shopify/Wix publishing, native voice, Android back behaviour on device.

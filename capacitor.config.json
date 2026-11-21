@@ -1,0 +1,17 @@
+{
+  "appId": "com.forkan.omniai",
+  "appName": "Omni Ai",
+  "webDir": "public",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  },
+  "android": {
+    "allowMixedContent": true
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
