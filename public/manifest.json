@@ -1,0 +1,17 @@
+{
+  "name": "Omni Ai",
+  "short_name": "Omni Ai",
+  "description": "Multi-provider AI Engine with OpenCode Zen, Alibaba Qwen regions, Auto-Switch & Official Web Apps",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#cbc4fb",
+  "theme_color": "#7c5cff",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
